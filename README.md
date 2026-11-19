@@ -81,17 +81,55 @@ pip install -r requirements.txt
 python src/server.py
 ```
 
-### Configuration for Claude Desktop / Antigravity
+### Configuration
 
-Add to your MCP configuration:
+#### OpenCode
+
+Tambahkan di file `opencode.json` di root project, atau di `~/.config/opencode/config.json`:
 
 ```json
 {
   "mcpServers": {
     "word": {
-      "command": "python",
+      "command": "py",
       "args": ["src/server.py"],
-      "cwd": "/path/to/MCP_Word"
+      "cwd": "C:\\path\\to\\MCP_Word"
+    }
+  }
+}
+```
+
+Lalu jalankan OpenCode di folder project:
+```bash
+cd C:\path\to\MCP_Word
+opencode
+```
+
+#### Claude Desktop
+
+Tambahkan ke `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "word": {
+      "command": "py",
+      "args": ["src/server.py"],
+      "cwd": "C:\\path\\to\\MCP_Word"
+    }
+  }
+}
+```
+
+#### Cursor / Windsurf / Other MCP Clients
+
+```json
+{
+  "mcpServers": {
+    "word": {
+      "command": "py",
+      "args": ["src/server.py"],
+      "cwd": "C:\\path\\to\\MCP_Word"
     }
   }
 }
