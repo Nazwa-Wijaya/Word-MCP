@@ -11,7 +11,7 @@ import os
 # Add src to path so imports work
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from mcp.server.fastmcp import FastMCP
+from mcp.server.mcpserver import MCPServer
 
 from word_engine import WordEngine
 from tools import register_all_tools
@@ -19,8 +19,8 @@ from tools import register_all_tools
 
 def main():
     # Create the MCP server
-    mcp = FastMCP(
-        "MCP Word Server",
+    mcp = MCPServer(
+        name="MCP Word Server",
         version="1.0.0",
         description=(
             "Full-featured MCP server for Microsoft Word document manipulation. "
